@@ -11,6 +11,7 @@ formElt.addEventListener("submit", function (e) {
     var nomProfil = formElt.elements.profil.value;
     
     ajaxGet("https://api.github.com/users/" + nomProfil, function (reponse) {
+        // Transformation de la réponse en un objet JSON
         var profil = JSON.parse(reponse);
         // Création des informations sur le profil
         var avatarElt = document.createElement("img");
